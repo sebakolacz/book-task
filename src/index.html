@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>book-task</title>
+  <!-- Favicon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- Main css file -->
+  <link rel="stylesheet" href="css/index.min.css" />
+  <!-- Custom styles -->
+  <style></style>
+</head>
+
+<body>
+  <!-- Start your project here-->
+    <form class="form">
+        <input class="form__title">
+        <input class="form__author">
+        <select class="form__category">
+            <option value="">-Wybierz kategorię-</option>
+            <option value="thriller">kryminał</option>
+            <option value="sci-fi">sci-fi</option>
+            <option value="fantasy">fantasy</option>
+            <option value="poetry">poezja</option>
+            <option value="dramat">dramat</option>
+            <option value="science">nauki ścisłe</option></select>
+        <input class="form__priority" type="range" min="1" max="5">
+        <button class="form__submit" type="submit">Dodaj</button>
+    </form>
+
+    <table class="table__to-read">
+      <thead>
+          <tr>
+              <th colspan="2">Do przeczytania</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Tytuł</td>
+              <td>Autor</td>
+              <td>Kategoria</td>
+              <td>Priorytet</td>
+          </tr>
+      </tbody>
+    </table>    
+      <table class="table__readed">
+      <thead>
+          <tr>
+              <th colspan="2">Przeczytane</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Tytuł</td>
+              <td>Autor</td>
+              <td>Kategoria</td>
+              <td>Priorytet</td>
+          </tr>
+      </tbody>
+    </table>
+  <!-- End your project here-->
+
+</body>
+<!-- Main js file -->
+<script type="text/javascript" src="js/index.min.js"></script>
+<!-- Custom scripts -->
+<script type="text/javascript"></script>
+
+</html>
