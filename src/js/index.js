@@ -14,32 +14,68 @@ const creatingElementsOfTable = () => {
     const creatingTdAuthor = document.createElement('td');
     const creatingTdCategory = document.createElement('td');
     const creatingTdPriority = document.createElement('td');
-    const removingTr = document.createElement('td');
+
+    const creatingInputTitle = document.createElement('input');
+    creatingInputTitle.readOnly = true;
+    const creatingInputAuthor = document.createElement('input');
+    creatingInputAuthor.readOnly = true;
+    const creatingInputCategory = document.createElement('input');
+    creatingInputCategory.readOnly = true;
+    const creatingInputPriority = document.createElement('input');
+    creatingInputPriority.readOnly = true;
+    const editBtn = document.createElement('button');
+    const removingTrBtn = document.createElement('button');
+
+    creatingTdTitle.classList.add('title');
+    editBtn.classList.add('editBtn');
 
     creatingTr.append(creatingTdTitle);
     creatingTr.append(creatingTdAuthor);
     creatingTr.append(creatingTdCategory);
     creatingTr.append(creatingTdPriority);
-    creatingTr.append(removingTr);
+    creatingTr.append(editBtn);
+    creatingTr.append(removingTrBtn);
+
+    creatingTdTitle.append(creatingInputTitle);
+    creatingTdAuthor.append(creatingInputAuthor);
+    creatingTdCategory.append(creatingInputCategory);
+    creatingTdPriority.append(creatingInputPriority);
 
     const titleOfBook = document.querySelector('.form__title');
     const authorOfBook = document.querySelector('.form__author');
     const categoryOfBook = document.querySelector('.form__category');
     const priorityOfBook = document.querySelector('.form__priority');
 
-    creatingTdTitle.textContent = titleOfBook.value;
-    creatingTdAuthor.textContent = authorOfBook.value;
-    creatingTdCategory.textContent = categoryOfBook.value;
-    creatingTdPriority.textContent = priorityOfBook.value;
-    removingTr.textContent = "X";
+    creatingInputTitle.value = titleOfBook.value;
+    creatingInputAuthor.value = authorOfBook.value;
+    creatingInputCategory.value = categoryOfBook.value;
+    creatingInputPriority.value = priorityOfBook.value;
+    editBtn.textContent = 'Edytuj';
+    removingTrBtn.textContent = 'Usuń';
 
-    titleOfBook.value = "";
-    authorOfBook.value = "";
-    categoryOfBook.value = "";
-    priorityOfBook.value = "";
+    titleOfBook.value = '';
+    authorOfBook.value = '';
+    categoryOfBook.value = '';
+    priorityOfBook.value = '';
 
-    removingTr.addEventListener('click', (e) => {
-        e.preventDefault();
+    const editElementOfTheTable = () => {
+        creatingInputTitle.toggleAttribute('readonly');
+        creatingInputAuthor.toggleAttribute('readonly');
+        creatingInputCategory.toggleAttribute('readonly');
+        creatingInputPriority.toggleAttribute('readonly');
+
+        if (creatingInputTitle.hasAttribute('readonly')) {
+            editBtn.textContent = 'Edytuj';
+        } else {
+            editBtn.textContent = 'Zakończ';
+        }
+    };
+
+    editBtn.addEventListener('click', () => {
+        editElementOfTheTable();
+    });
+
+    removingTrBtn.addEventListener('click', () => {
         creatingTr.remove();
     });
 

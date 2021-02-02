@@ -13,11 +13,11 @@
 .table {
     &__to-read {
         display: grid;
-        grid-template-columns: 600px;
+        grid-template-columns: 1000px;
     }
 
     &__readed {
         display: grid;
-        grid-template-columns: 600px;
+        grid-template-columns: 1000px;
     }
 }
