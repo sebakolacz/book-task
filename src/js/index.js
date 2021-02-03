@@ -10,6 +10,11 @@ const creatingElementsOfTable = () => {
     const creatingTr = document.createElement('tr');
     toReadBody.append(creatingTr);
 
+    const tableToRead = document.querySelector('.table__to-read-body');
+    const quantityOfTr = tableToRead.getElementsByTagName('tr');
+    // quantityOfTr.length - 1;
+    // console.log(quantityOfTr.value);
+
     const creatingTdTitle = document.createElement('td');
     const creatingTdAuthor = document.createElement('td');
     const creatingTdCategory = document.createElement('td');
@@ -71,12 +76,17 @@ const creatingElementsOfTable = () => {
         }
     };
 
+    const quantity = document.querySelector('.table__to-read-body-quantity');
+    quantity.textContent = `Liczba książek: ${quantityOfTr.length - 2}`;
+
     editBtn.addEventListener('click', () => {
         editElementOfTheTable();
     });
 
     removingTrBtn.addEventListener('click', () => {
         creatingTr.remove();
+        const quantity = document.querySelector('.table__to-read-body-quantity');
+        quantity.textContent = `Liczba książek: ${quantityOfTr.length - 2}`;
     });
 
 };
