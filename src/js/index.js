@@ -12,8 +12,6 @@ const creatingElementsOfTable = () => {
 
     const tableToRead = document.querySelector('.table__to-read-body');
     const quantityOfTr = tableToRead.getElementsByTagName('tr');
-    // quantityOfTr.length - 1;
-    // console.log(quantityOfTr.value);
 
     const creatingTdTitle = document.createElement('td');
     const creatingTdAuthor = document.createElement('td');
@@ -33,6 +31,8 @@ const creatingElementsOfTable = () => {
 
     creatingTdTitle.classList.add('title');
     editBtn.classList.add('editBtn');
+    creatingTr.classList.add('table__to-read-body-tr');
+    removingTrBtn.classList.add('removeBtn');
 
     creatingTr.append(creatingTdTitle);
     creatingTr.append(creatingTdAuthor);
@@ -76,8 +76,8 @@ const creatingElementsOfTable = () => {
         }
     };
 
-    const quantity = document.querySelector('.table__to-read-body-quantity');
-    quantity.textContent = `Liczba książek: ${quantityOfTr.length - 2}`;
+    const quantity = document.querySelector('.table__to-read-quantity');
+    quantity.textContent = `Liczba książek: ${quantityOfTr.length}`;
 
     editBtn.addEventListener('click', () => {
         editElementOfTheTable();
@@ -85,8 +85,8 @@ const creatingElementsOfTable = () => {
 
     removingTrBtn.addEventListener('click', () => {
         creatingTr.remove();
-        const quantity = document.querySelector('.table__to-read-body-quantity');
-        quantity.textContent = `Liczba książek: ${quantityOfTr.length - 2}`;
+        const quantity = document.querySelector('.table__to-read-quantity');
+        quantity.textContent = `Liczba książek: ${quantityOfTr.length}`;
     });
 
 };
@@ -96,4 +96,10 @@ const submit = document.querySelector('.form__submit');
 submit.addEventListener('click', (e) => {
     e.preventDefault();
     creatingElementsOfTable();
+});
+
+const printTable = document.querySelector('.print');
+
+printTable.addEventListener('click', () => {
+    window.print();
 });

@@ -3,21 +3,287 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+}
+body {
+    background-color: #036564;
 }
 
-.form {
-    display: grid;
-    grid-template-columns: 200px;
+@media (min-width: 320px) AND (max-width: 575px) {
+  .form {
+    width: 70vw;
+    margin: 0 auto;
+
+    @mixin inputs {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      height: 28px;
+      background-color: white;
+      border: 2px solid #033649;
+    }
+
+    &__label {
+      color: #E8DDCB;
+      font-weight: 600;
+      padding-bottom: 5px;
+    }
+
+    &__name {
+      text-align: center;
+      margin: 20px;
+      color: #E8DDCB;
+    }
+
+    &__title {
+      @include inputs;
+    }
+
+    &__author {
+      @include inputs;
+    }
+
+    &__category {
+      @include inputs;
+    }
+
+    &__submit {
+      width: 100%;
+      margin: 10px 0 20px;
+      background-color: #CDB380;
+      border-radius: 20px;
+      color: #033649;
+      font-weight: 600;
+      padding: 5px 0;
+    }
+
+    &__search {
+      padding-left: 10px;
+      @include inputs;
+    }
+
+    &__range {
+        width: 70%;
+        margin: 0 0 20px;
+        background-color: transparent;
+        -webkit-appearance: none;
+      
+      &:focus {
+        outline: none;
+      }
+      &::-webkit-slider-runnable-track {
+        background: #eafde6;
+        border: 2.3px solid #000001;
+        border-radius: 9px;
+        width: 100%;
+        height: 10.4px;
+        cursor: pointer;
+      }
+      &::-webkit-slider-thumb {
+        margin-top: -7.1px;
+        width: 16px;
+        height: 20px;
+        background: #eafde6;
+        border: 2.9px solid #000000;
+        border-radius: 18px;
+        cursor: pointer;
+        -webkit-appearance: none;
+      }
+      &:focus::-webkit-slider-runnable-track {
+        background: #fefffe;
+      }
+      &::-moz-range-track {
+        background: #eafde6;
+        border: 2.3px solid #000001;
+        border-radius: 9px;
+        width: 100%;
+        height: 10.4px;
+        cursor: pointer;
+      }
+      &::-moz-range-thumb {
+        width: 16px;
+        height: 20px;
+        background: #eafde6;
+        border: 2.9px solid #000000;
+        border-radius: 18px;
+        cursor: pointer;
+      }
+      &::-ms-track {
+        background: transparent;
+        border-color: transparent;
+        border-width: 5.8px 0;
+        color: transparent;
+        width: 100%;
+        height: 10.4px;
+        cursor: pointer;
+      }
+      &::-ms-fill-lower {
+        background: #d6fbce;
+        border: 2.3px solid #000001;
+        border-radius: 18px;
+      }
+      &::-ms-fill-upper {
+        background: #eafde6;
+        border: 2.3px solid #000001;
+        border-radius: 18px;
+      }
+      &::-ms-thumb {
+        width: 16px;
+        height: 20px;
+        background: #eafde6;
+        border: 2.9px solid #000000;
+        border-radius: 18px;
+        cursor: pointer;
+        margin-top: 0px;
+      }
+      &:focus::-ms-fill-lower {
+        background: #eafde6;
+      }
+      &:focus::-ms-fill-upper {
+        background: #fefffe;
+      }
+    }
+  }
+  .table__to-read {
+    margin: 0 auto;
+    color: #E8DDCB;
+    width: 100%;
+
+    &-title {
+      text-align: center;
+      color: #E8DDCB;
+    }
+
+    &-headers {
+      width: 20%;
+    }
+    &-header {
+      font-size: 18px;
+      font-weight: 700;
+      &:nth-child(1) {
+        width: 30%;
+      }
+      &:nth-child(2) {
+        width: 30%;
+      }
+      &:nth-child(3) {
+        width: 20%;
+      }
+      &:nth-child(4) {
+        width: 10%;
+      }
+    }
+
+    &-body-tr {
+      width: 100%;
+      margin: 0 auto;
+    }    
+    &-body-tr input {
+      width: 100%;
+      background-color: transparent;
+      color: #E8DDCB;
+      text-align: center;
+    }
+    &-quantity {
+      color: #E8DDCB;
+    }
+  }
+  .editBtn,
+  .removeBtn {
+    padding: 3px 15px;
+    background-color: #CDB380;
+    border-radius: 20px;
+    color: #033649;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .print {
+    padding: 3px 15px;
+    background-color: #CDB380;
+    border-radius: 20px;
+    color: #033649;
+    font-weight: 600;
+    margin: 0 auto;
+  }
 }
-
-.table {
-    &__to-read {
-        display: grid;
-        grid-template-columns: 1000px;
-    }
-
-    &__readed {
-        display: grid;
-        grid-template-columns: 1000px;
-    }
+input[type=range] {
+  width: 70%;
+  margin: 0 0 20px;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  background: #eafde6;
+  border: 2.3px solid #000001;
+  border-radius: 9px;
+  width: 100%;
+  height: 10.4px;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  margin-top: -7.1px;
+  width: 16px;
+  height: 20px;
+  background: #eafde6;
+  border: 2.9px solid #000000;
+  border-radius: 18px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #fefffe;
+}
+input[type=range]::-moz-range-track {
+  background: #eafde6;
+  border: 2.3px solid #000001;
+  border-radius: 9px;
+  width: 100%;
+  height: 10.4px;
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  width: 16px;
+  height: 20px;
+  background: #eafde6;
+  border: 2.9px solid #000000;
+  border-radius: 18px;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 5.8px 0;
+  color: transparent;
+  width: 100%;
+  height: 10.4px;
+  cursor: pointer;
+}
+input[type=range]::-ms-fill-lower {
+  background: #d6fbce;
+  border: 2.3px solid #000001;
+  border-radius: 18px;
+}
+input[type=range]::-ms-fill-upper {
+  background: #eafde6;
+  border: 2.3px solid #000001;
+  border-radius: 18px;
+}
+input[type=range]::-ms-thumb {
+  width: 16px;
+  height: 20px;
+  background: #eafde6;
+  border: 2.9px solid #000000;
+  border-radius: 18px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #eafde6;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #fefffe;
 }
