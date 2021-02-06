@@ -1,12 +1,12 @@
-@import "~mdb-ui-kit/css/mdb.min.css";
+@import '~mdb-ui-kit/css/mdb.min.css';
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 body {
-  background-color: #036564;
+    background-color: #036564;
 }
 
 @mixin inputs {
@@ -20,7 +20,7 @@ body {
 }
 @mixin buttons {
   margin: 10px 0 20px;
-  background-color: #cdb380;
+  background-color: #CDB380;
   border-radius: 20px;
   color: #033649;
   font-weight: 600;
@@ -33,7 +33,7 @@ body {
     margin: 0 auto;
 
     &__label {
-      color: #e8ddcb;
+      color: #E8DDCB;
       font-weight: 600;
       padding-bottom: 5px;
     }
@@ -41,7 +41,7 @@ body {
     &__name {
       text-align: center;
       margin: 20px;
-      color: #e8ddcb;
+      color: #E8DDCB;
     }
 
     &__title {
@@ -77,11 +77,11 @@ body {
       }
     }
     &__range {
-      width: 70%;
-      margin: 0 0 20px;
-      background-color: transparent;
-      -webkit-appearance: none;
-
+        width: 70%;
+        margin: 0 0 20px;
+        background-color: transparent;
+        -webkit-appearance: none;
+      
       &:focus {
         outline: none;
       }
@@ -160,12 +160,12 @@ body {
   }
   .table__to-read {
     margin: 0 auto;
-    color: #e8ddcb;
+    color: #E8DDCB;
     width: 100%;
 
     &-title {
       text-align: center;
-      color: #e8ddcb;
+      color: #E8DDCB;
     }
 
     &-headers {
@@ -191,15 +191,15 @@ body {
     &-body-tr {
       width: 100%;
       margin: 0 auto;
-    }
+    }    
     &-body-tr input {
       width: 100%;
       background-color: transparent;
-      color: #e8ddcb;
+      color: #E8DDCB;
       text-align: center;
     }
     &-quantity {
-      color: #e8ddcb;
+      color: #E8DDCB;
     }
   }
   .editBtn,
@@ -210,85 +210,4 @@ body {
     @include buttons;
     padding: 5px 20px;
   }
-}
-input[type="range"] {
-  width: 70%;
-  margin: 0 0 20px;
-  background-color: transparent;
-  -webkit-appearance: none;
-}
-input[type="range"]:focus {
-  outline: none;
-}
-input[type="range"]::-webkit-slider-runnable-track {
-  background: #eafde6;
-  border: 2.3px solid #000001;
-  border-radius: 9px;
-  width: 100%;
-  height: 10.4px;
-  cursor: pointer;
-}
-input[type="range"]::-webkit-slider-thumb {
-  margin-top: -7.1px;
-  width: 16px;
-  height: 20px;
-  background: #eafde6;
-  border: 2.9px solid #000000;
-  border-radius: 18px;
-  cursor: pointer;
-  -webkit-appearance: none;
-}
-input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: #fefffe;
-}
-input[type="range"]::-moz-range-track {
-  background: #eafde6;
-  border: 2.3px solid #000001;
-  border-radius: 9px;
-  width: 100%;
-  height: 10.4px;
-  cursor: pointer;
-}
-input[type="range"]::-moz-range-thumb {
-  width: 16px;
-  height: 20px;
-  background: #eafde6;
-  border: 2.9px solid #000000;
-  border-radius: 18px;
-  cursor: pointer;
-}
-input[type="range"]::-ms-track {
-  background: transparent;
-  border-color: transparent;
-  border-width: 5.8px 0;
-  color: transparent;
-  width: 100%;
-  height: 10.4px;
-  cursor: pointer;
-}
-input[type="range"]::-ms-fill-lower {
-  background: #d6fbce;
-  border: 2.3px solid #000001;
-  border-radius: 18px;
-}
-input[type="range"]::-ms-fill-upper {
-  background: #eafde6;
-  border: 2.3px solid #000001;
-  border-radius: 18px;
-}
-input[type="range"]::-ms-thumb {
-  width: 16px;
-  height: 20px;
-  background: #eafde6;
-  border: 2.9px solid #000000;
-  border-radius: 18px;
-  cursor: pointer;
-  margin-top: 0px;
-  /*Needed to keep the Edge thumb centred*/
-}
-input[type="range"]:focus::-ms-fill-lower {
-  background: #eafde6;
-}
-input[type="range"]:focus::-ms-fill-upper {
-  background: #fefffe;
 }
