@@ -32,10 +32,10 @@
       <h1 class="form__name">Przeczytaj książkę!</h1>
 
       <label for="title" class="form__label">Tytuł</label>
-      <input class="form__title" id="title" />
+      <input class="form__title" id="title" placeholder="To"/>
 
       <label for="author" class="form__label">Autor</label>
-      <input class="form__author" id="author" />
+      <input class="form__author" id="author" placeholder="Stephen King"/>
 
       <label for="category" class="form__label">Kategoria</label>
       <select class="form__category" id="category">
@@ -80,23 +80,22 @@
           <th class="table__to-read-header">Pr.</th>
         </tr>
       </thead>
-      <tbody class="table__to-read-body"></tbody>
+      <tbody class="table__to-read-body">
+      </tbody>
     </table>
     <div class="table__to-read-quantity"></div>
 
     <table class="table__readed">
       <thead>
-        <tr>
-          <th colspan="2">Przeczytane</th>
-        </tr>
+          <h1 class="table__readed-title">Przeczytane</h1>
+          <tr class="table__readed-headers">
+            <th class="table__readed-header">Tytuł</th>
+            <th class="table__readed-header">Autor</th>
+            <th class="table__readed-header">Kategoria</th>
+            <th class="table__readed-header">Pr.</th>
+          </tr>
       </thead>
       <tbody class="table__readed-body">
-        <tr>
-          <td>Tytuł</td>
-          <td>Autor</td>
-          <td>Kategoria</td>
-          <td>Priorytet</td>
-        </tr>
       </tbody>
     </table>
     <button class="print">Drukuj</button>

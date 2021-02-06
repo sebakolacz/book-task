@@ -76,7 +76,7 @@ body {
         width: 48%;
       }
     }
-    &__range {
+    &__priority {
         width: 70%;
         margin: 0 0 20px;
         background-color: transparent;
@@ -158,7 +158,8 @@ body {
       }
     }
   }
-  .table__to-read {
+  .table__to-read,
+  .table__readed {
     margin: 0 auto;
     color: #E8DDCB;
     width: 100%;
@@ -191,12 +192,13 @@ body {
     &-body-tr {
       width: 100%;
       margin: 0 auto;
+      border-bottom: 2px solid #033649;
     }    
     &-body-tr input {
       width: 100%;
       background-color: transparent;
       color: #E8DDCB;
-      text-align: center;
+      // text-align: center;
     }
     &-quantity {
       color: #E8DDCB;
@@ -205,6 +207,8 @@ body {
   .editBtn,
   .removeBtn {
     @include buttons;
+    margin: 0 0 2px;
+    padding: 5px 10px;
   }
   .print {
     @include buttons;

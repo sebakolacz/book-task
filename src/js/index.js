@@ -42,8 +42,6 @@ const creatingElementsOfTable = () => {
     creatingTr.append(removingTrBtn);
 
     creatingTdTitle.append(creatingInputTitle);
-    creatingTdAuthor.append(creatingInputAuthor);
-    creatingTdCategory.append(creatingInputCategory);
     creatingTdPriority.append(creatingInputPriority);
 
     const titleOfBook = document.querySelector('.form__title');
@@ -78,7 +76,6 @@ const creatingElementsOfTable = () => {
 
     const quantity = document.querySelector('.table__to-read-quantity');
     quantity.textContent = `Liczba książek: ${quantityOfTr.length}`;
-
     editBtn.addEventListener('click', () => {
         editElementOfTheTable();
     });
@@ -92,14 +89,83 @@ const creatingElementsOfTable = () => {
 };
 
 const submit = document.querySelector('.form__submit');
-
 submit.addEventListener('click', (e) => {
     e.preventDefault();
     creatingElementsOfTable();
 });
 
-const printTable = document.querySelector('.print');
+const creatingNewCategory = () => {
+    const creatingNewCategoryInput = document.querySelector('.form__creating-category-input');
+    const categories = document.querySelector('.form__category');
+    const createOptionInSelect = document.createElement('option');
 
+    createOptionInSelect.value = creatingNewCategoryInput.value;
+    createOptionInSelect.textContent = creatingNewCategoryInput.value;
+    categories.append(createOptionInSelect);
+    creatingNewCategoryInput.value = '';
+};
+
+const creatingNewCategoryBtn = document.querySelector('.form__creating-category-btn');
+creatingNewCategoryBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    creatingNewCategory();
+});
+
+const printTable = document.querySelector('.print');
 printTable.addEventListener('click', () => {
     window.print();
 });
+
+const creatingNewTrReaded = document.querySelector('.table__readed');
+
+creatingNewTrReaded.addEventListener('mouseenter', () => {
+    const creatingNewTrReaded = document.createElement('tr');
+    const tableReaded = document.querySelector('.table__readed-body');
+    tableReaded.append(creatingNewTrReaded);
+    creatingNewTrReaded.classList.add('clearEmpty');
+});
+
+const fill = document.querySelector('.table__to-read-body-tr')
+// const fill = document.querySelector('.fill');
+const empties = document.querySelectorAll('.clearEmpty');
+
+// Fill listeners
+fill.addEventListener('dragstart', dragStart);
+fill.addEventListener('dragend', dragEnd);
+
+// Loop through empty boxes and add listeners
+for (const empty of empties) {
+  empty.addEventListener('dragover', dragOver);
+  empty.addEventListener('dragenter', dragEnter);
+  empty.addEventListener('dragleave', dragLeave);
+  empty.addEventListener('drop', dragDrop);
+}
+
+// Drag Functions
+
+function dragStart() {
+  this.className += ' hold';
+  setTimeout(() => (this.className = 'invisible'), 0);
+}
+
+function dragEnd() {
+  this.className = 'fill';
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function dragEnter(e) {
+  e.preventDefault();
+  this.className += ' hovered';
+}
+
+function dragLeave() {
+  this.className = 'empty';
+}
+
+function dragDrop() {
+  this.className = 'empty';
+  this.append(fill);
+}
