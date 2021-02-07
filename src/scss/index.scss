@@ -27,11 +27,22 @@ body {
   padding: 5px 0;
 }
 
-@media (min-width: 320px) AND (max-width: 575px) {
+@media (min-width: 320px) {
   .form {
     width: 70vw;
     margin: 0 auto;
-
+    @media (min-width: 600px) {
+      width: 60vw;
+    }
+    @media (min-width: 900px) {
+      width: 50vw;
+    }
+    @media (min-width: 1200px) {
+      width: 40vw;
+    }
+    @media (min-width: 1500px) {
+      width: 30vw;
+    }
     &__label {
       color: #E8DDCB;
       font-weight: 600;
@@ -160,9 +171,18 @@ body {
   }
   .table__to-read,
   .table__readed {
-    margin: 0 auto;
+    margin: 30px auto;
     color: #E8DDCB;
     width: 100%;
+    @media (min-width: 600px) {
+      width: 80vw;
+    }
+    @media (min-width: 900px) {
+      width: 70vw;
+    }
+    @media (min-width: 1200px) {
+      width: 60vw;
+    }
 
     &-title {
       text-align: center;
@@ -177,6 +197,7 @@ body {
       font-weight: 700;
       &:nth-child(1) {
         width: 30%;
+        padding-left: 10px;
       }
       &:nth-child(2) {
         width: 30%;
@@ -202,6 +223,9 @@ body {
     }
     &-quantity {
       color: #E8DDCB;
+      font-size: 20px;
+      font-weight: 600;
+      margin-left: 80px;
     }
   }
   .editBtn,
@@ -213,5 +237,6 @@ body {
   .print {
     @include buttons;
     padding: 5px 20px;
+    margin-left: 50px;
   }
 }
